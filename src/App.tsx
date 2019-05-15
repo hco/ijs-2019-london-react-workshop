@@ -6,6 +6,8 @@ export function App() {
     <React.Fragment>
       <h1>Hello Park Plaza!</h1>
       <Message name="Andrey" opinion="asd" />
+      <hr />
+      <Message opinion="It's great" />
     </React.Fragment>
   );
 }

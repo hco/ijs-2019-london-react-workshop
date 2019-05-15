@@ -2,6 +2,7 @@ import React from 'react';
 import { Message } from './components/Message';
 import { Message as MessageInterface } from './domain/Message';
 import { MessageCompose } from './components/MessageCompose';
+import { Toggle } from './components/Toggle';
 
 export function App() {
   const message: MessageInterface = {

@@ -1,11 +1,22 @@
 import React, { useState } from 'react';
-import { Toggle } from './Toggle';
+import { Toggle } from './Toggle.js';
+import { Message } from '../domain/Message';
 
-export const MessageCompose = () => {
+interface Props {
+  onAddMessage: (message: Message) => void;
+}
+
+export const MessageCompose = ({ onAddMessage }: Props) => {
   const [inputValue, setInput] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault();
+    onAddMessage({
+      author: 'Andrey',
+      id: Date.now().toString(),
+      date: new Date().getTime(),
+      message: inputValue
+    });
     setInput('');
   };
 

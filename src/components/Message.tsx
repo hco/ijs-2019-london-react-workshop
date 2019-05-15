@@ -1,15 +1,14 @@
 import React from 'react';
+import { Message as MessageInterface } from '../domain/Message';
 
 interface Props {
-  name?: string;
-  opinion: string;
+  message: MessageInterface;
 }
-
-export const Message = ({ name, opinion }: Props): JSX.Element => {
+export const Message = ({ message }: Props): JSX.Element => {
   return (
     <article>
-      {opinion}
-      {name && <footer>{name.toUpperCase()}</footer>}
+      {message.message}
+      <footer>{message.author.toUpperCase()}</footer>
     </article>
   );
 };
